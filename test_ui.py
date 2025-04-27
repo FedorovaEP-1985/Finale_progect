@@ -7,7 +7,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+driver = webdriver.Chrome(
+    service=ChromeService(ChromeDriverManager
+                          ().install()))
 driver.get('https://www.kinopoisk.ru')
 ui = testKinopoisk(driver)
 
@@ -23,7 +25,7 @@ def test_poisk():
 @allure.epic("Кинопоиск онлайн UI")
 @allure.title("Валидация поля поиска")
 def test_search_validation():
-    ui.input_name("Sloum")
+    ui.input_name("Kati")
 
 
 @allure.suite("Кинопоиск UI")
