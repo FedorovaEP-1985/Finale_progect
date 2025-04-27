@@ -21,15 +21,15 @@ class testKinopoisk():
         poisk = self.driver.find_element(By.CSS_SELECTOR, "input[name='kp_query']")    # noqa: E501
         poisk.send_keys(names, Keys.RETURN)
 
-    @allure.step("Вводим имя {names}")
-    def input_name(self, names: str):
+    @allure.step("Проверка ввода в поисковую строку: '{text}'")
+    def input_name(self, text: str):
         """
            Здесь мы проверяем отображение в поисковой строке ввод:
            букв, цифр, символов.
            Открываться cсылки и куда-то переходить мы не должны.
         """
         poi = self.driver.find_element(By.CSS_SELECTOR, 'input[name="kp_query"]')
-        poi.send_keys(names)
+        poi.send_keys(text)
 
     @allure.step("Запустить трейлер для просмотра")
     def play_trayler(self):
