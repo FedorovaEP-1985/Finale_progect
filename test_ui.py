@@ -17,14 +17,14 @@ ui = testKinopoisk(driver)
 @allure.epic("Кинопоиск онлайн UI")
 @allure.title("Поиск фильма по названию")
 def test_poisk():
-    names = 'Блейд'
+    names = 'Побег из Шоушенка'
     ui.poisk_film(names)
 
 
 @allure.suite("Кинопоиск UI")
 @allure.epic("Кинопоиск онлайн UI")
 @allure.title("Валидация поля поиска")
-def test_search_validation():
+def input_name():
     ui.input_name("Kati")
 
 

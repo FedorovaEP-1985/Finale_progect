@@ -8,7 +8,8 @@ class testKinopoisk():
             self.driver = driver
             self.driver.maximize_window()
             self.driver.implicitly_wait(20)
-
+            yield driver
+            driver.quit()
 
     @allure.step("Вводим имя {names}")
     def poisk_film(self, names: str):
@@ -16,7 +17,7 @@ class testKinopoisk():
            Поиск фильма по названию.
            Можно указывать часть названия, если не помните полное.
            Поиск будет произведён и вам откроется список фильмов
-           в которых будет присутствовать часть введённого низания.
+           в которых будет присутствовать часть введённого названия.
         """
         poisk = self.driver.find_element(By.CSS_SELECTOR, "input[name='kp_query']")    # noqa: E501
         poisk.send_keys(names, Keys.RETURN)

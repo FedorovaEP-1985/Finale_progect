@@ -9,11 +9,11 @@ MOVIE_TITLE = "Побег из Шоушенка"
 MOVIE_YEAR = "1994"
 INVALID_SEARCH_QUERY = "12345"
 
+
  # API
 API_KEY = "ZGYV669-58WM2EQ-G5DSZE7-M8Y2JV9"
 MOVIE_ID = 326
 PERSON_NAME = "2286874"
-
 
 
 @allure.title("Получение информации о фильме")
@@ -44,7 +44,9 @@ def test_get_top_movies():
 
 @allure.title("Поиск несуществующего фильма")
 def test_search_nonexistent_movie():
-    url = f"{API_URL}movie/search?page=1&limit=10&query={INVALID_SEARCH_QUERY}"
+    url = (f"{API_URL}"
+           f"movie/search?page=1&limit=10&query"
+           f"={INVALID_SEARCH_QUERY}")
     headers = {"X-API-KEY": API_KEY}
     response = requests.get(url, headers=headers)
     assert response.status_code == 200
@@ -57,4 +59,5 @@ def test_get_person_info():
     headers = {"X-API-KEY": API_KEY}
     response = requests.get(url, params=params, headers=headers)
     assert response.status_code == 200
-    assert response.json()['docs'][0]['name'] == 'Александр Петров'
+    assert (response.json()['docs'][0]['name']
+            == 'Александр Петров')

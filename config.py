@@ -13,12 +13,15 @@ class Config:
     PASSWORD = os.getenv('KP_PASSWORD', '3541')
     
     # API ключ
-    API_KEY = os.getenv('KP_API_KEY', 'ZGYV669-58WM2EQ-G5DSZE7-M8Y2JV9')
+    API_KEY = os.getenv(
+        'KP_API_KEY',
+        'ZGYV669-58WM2EQ-G5DSZE7-M8Y2JV9')
     
     # Настройки cookies
     @staticmethod
     def get_cookies():
-        cookie_string = os.getenv('COOKIE_STRING', '')
+        cookie_string = os.getenv(
+            'COOKIE_STRING', '')
         if not cookie_string:
             return []
             
@@ -32,4 +35,5 @@ class Config:
                 'domain': '.kinopoisk.ru'
             })
         return cookies
-    HEADLESS = os.getenv('HEADLESS', 'false').lower() == 'true'
+    HEADLESS = os.getenv(
+        'HEADLESS', 'false').lower() == 'true'
