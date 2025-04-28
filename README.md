@@ -26,6 +26,11 @@ API тесты: Requests + Pytest
 Ресурсы Тестовое окружение: Windows/IOS , Python 3.9+
 Браузер: Chrome последней версии
 
-Тестовые данные: временные аккаунты 7. Запуск автотестов Запуск тестов UI по команде: pytest -v --alluredir=allure-results test\test_ui.py
-
-Генерация отчета по команде: allure serve allure-results
+Тестовые данные: временные аккаунты 
+Запуск автотестов:
+Запуск тестов UI по команде: 
+pytest -v --alluredir=allure-results test\test_ui.py
+Как запустить только UI (pytest test/test_ui.py)
+Как запустить только API (pytest test/test_api.py)
+Как запустить все тесты (pytest)
+И команду генерации отчета (allure serve allure-results)
