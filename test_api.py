@@ -1,7 +1,7 @@
 import requests
 import allure
-from test_data import TestData
 from config import Config
+from test_data import TestData
 from dotenv import load_dotenv
 load_dotenv()
 
