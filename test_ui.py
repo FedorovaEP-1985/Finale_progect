@@ -20,7 +20,6 @@ ui = TestKinopoisk(driver)
 def test_poisk():
     names = 'Побег из Шоушенка'
     ui.poisk_film(names)
-    driver.quit()
 
 
 @allure.suite("Кинопоиск UI")
@@ -28,14 +27,12 @@ def test_poisk():
 @allure.title("Валидация поля поиска")
 def test_input_name():
     ui.input_name("Kati")
-    driver.quit()
 
 @allure.suite("Кинопоиск UI")
 @allure.epic("Кинопоиск онлайн UI")
 @allure.title("Воспроизведение трейлера")
 def test_play():
     ui.play_trailer()
-    driver.quit()
 
 @allure.suite("Кинопоиск UI")
 @allure.epic("Кинопоиск онлайн UI")
@@ -44,4 +41,3 @@ def test_auth():
     login = "milashkaersh"
     passwd = "3541"
     ui.avtorizacia(login, passwd)
-    driver.quit()

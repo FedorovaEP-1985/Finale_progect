@@ -15,7 +15,7 @@ class Config:
     # API ключ
     API_KEY = os.getenv(
         'KP_API_KEY',
-        'ZGYV669-58WM2EQ-G5DSZE7-M8Y2JV9')
+        'DA5WC8Z-X4B4TSK-NSC813H-8DJQJC3')
     
     # Настройки cookies
     @staticmethod
