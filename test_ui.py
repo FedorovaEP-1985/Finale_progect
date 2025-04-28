@@ -1,18 +1,30 @@
 import allure
+import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 from class_ui import TestKinopoisk
+from config import Config
 from dotenv import load_dotenv
 load_dotenv()
 
 
-driver = webdriver.Chrome(
-    service=ChromeService(ChromeDriverManager
-                          ().install()))
-driver.get('https://www.kinopoisk.ru')
-ui = TestKinopoisk(driver)
+@pytest.fixture(scope='function')
+def driver():
+    options = webdriver.ChromeOptions()
+    if Config.HEADLESS:
+        options.add_argument('--headless')
 
+    driver = webdriver.Chrome(
+        service=ChromeService(ChromeDriverManager(
+        ).install()))
+    driver.maximize_window()
+    driver.implicitly_wait(10)
+    yield driver
+    driver.quit()
+
+
+ui=TestKinopoisk
 
 @allure.suite("Кинопоиск UI")
 @allure.epic("Кинопоиск онлайн UI")

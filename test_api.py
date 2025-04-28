@@ -2,6 +2,9 @@ import requests
 import allure
 from test_data import TestData
 from config import Config
+from dotenv import load_dotenv
+load_dotenv()
+
 
 @allure.title("Получение информации о фильме")
 def test_get_movie_info():
