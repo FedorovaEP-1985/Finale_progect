@@ -13,9 +13,8 @@ class Config:
     PASSWORD = os.getenv('KP_PASSWORD', '3541')
     
     # API ключ
-    API_KEY = os.getenv(
-        'KP_API_KEY',
-        'ZDYV669-58WM2EQ-G5DSZE7-M8Y2JV9')
+    API_KEY = os.getenv('KP_API_KEY',
+        'ZGYV669-58WM2EQ-G5DSZE7-M8Y2JV9')
     
     # Настройки cookies
     @staticmethod

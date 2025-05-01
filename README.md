@@ -29,8 +29,8 @@ API тесты: Requests + Pytest
 Тестовые данные: временные аккаунты 
 Запуск автотестов:
 Запуск тестов UI по команде: 
-pytest -v --alluredir=allure-results test\test_ui.py
+pytest -v --alluredir=allure-results
 Как запустить только UI (pytest test/test_ui.py)
 Как запустить только API (pytest test/test_api.py)
-Как запустить все тесты (pytest)
+Как запустить все тесты с подробным отчетом (pytest -v)
 И команду генерации отчета (allure serve allure-results)
