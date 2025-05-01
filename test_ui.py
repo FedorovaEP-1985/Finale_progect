@@ -6,14 +6,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from class_ui import TestKinopoisk
 
 
-@pytest.fixture()
-def driver():
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
-    driver.maximize_window()
-    driver.implicitly_wait(10)
-    yield driver
-    driver.quit()
-
+@pytest.mark.usefixtures("driver")
 @pytest.fixture()
 def kp(driver):
     return TestKinopoisk(driver)
