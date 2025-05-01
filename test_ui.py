@@ -1,12 +1,20 @@
 import allure
 import pytest
+from class_ui import TestKinopoisk
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
-from class_ui import TestKinopoisk
 
 
-@pytest.mark.usefixtures("driver")
+@pytest.fixture()
+def driver():
+    driver = webdriver.Chrome(
+        service=ChromeService(ChromeDriverManager(
+        ).install()))
+    driver.maximize_window()
+    driver.implicitly_wait(15)
+    yield driver
+    driver.quit()
 @pytest.fixture()
 def kp(driver):
     return TestKinopoisk(driver)

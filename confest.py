@@ -22,10 +22,6 @@ def api_headers():
 # для UI
 @pytest.fixture(scope="module")
 def driver():
-    options = webdriver.ChromeOptions()
-    if Config.HEADLESS:
-        options.add_argument('--headless')
-
     driver = webdriver.Chrome(
         service=ChromeService(ChromeDriverManager(
         ).install()))
@@ -34,6 +30,6 @@ def driver():
     yield driver
     driver.quit()
 
-    @pytest.fixture
-    def api_url():
-        return requests.Session()  # или ваша базовая URL
+@pytest.fixture
+def api_url():
+    return requests.Session()  # или ваша базовая URL
