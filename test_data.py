@@ -4,6 +4,6 @@ class TestData:
     MOVIE_YEAR = "1994"
     INVALID_SEARCH_QUERY = "12345"
 
-     # API
+    # API
     MOVIE_ID = 326
     PERSON_NAME = "2286874"

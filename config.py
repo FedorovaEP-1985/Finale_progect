@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 class Config:
     # Основные настройки
     BASE_URL = "https://www.kinopoisk.ru/"

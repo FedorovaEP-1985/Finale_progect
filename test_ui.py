@@ -15,9 +15,12 @@ def driver():
     driver.implicitly_wait(15)
     yield driver
     driver.quit()
+
+
 @pytest.fixture()
 def kp(driver):
     return TestKinopoisk(driver)
+
 
 @allure.suite("Кинопоиск UI")
 @allure.epic("Кинопоиск онлайн UI")
@@ -26,6 +29,7 @@ def test_poisk(kp):
     name = 'Три кота'
     kp.poisk_film(name)
 
+
 @allure.suite("Кинопоиск UI")
 @allure.epic("Кинопоиск онлайн UI")
 @allure.title("Валидация поля поиска")
@@ -33,6 +37,7 @@ def test_input_name(kp):
     kp.input_name("Sloum")
     # Проверка введённого текста
     assert kp.get_search_text() == "Sloum", "Текст в поле не совпадает"
+
 
 @allure.suite("Кинопоиск UI")
 @allure.epic("Кинопоиск онлайн UI")
