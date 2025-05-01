@@ -15,10 +15,13 @@ def movie_data():
         "title": TestData.MOVIE_TITLE,
         "year": TestData.MOVIE_YEAR
     }
+
+
 # для API
 @pytest.fixture(scope="session")
 def api_headers():
     return {"X-API-KEY": Config.API_KEY}
+
 
 # для UI
 @pytest.fixture(scope="module")
@@ -30,6 +33,7 @@ def driver():
     driver.implicitly_wait(15)
     yield driver
     driver.quit()
+
 
 @pytest.fixture
 def api_url():
