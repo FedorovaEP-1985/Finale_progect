@@ -1,5 +1,5 @@
 class TestData:
-    SEARCH_QUERY = "Побег из Шоушенка"
+    SEARCH_QUERY = "Три кота"
     MOVIE_TITLE = "Побег из Шоушенка"
     MOVIE_YEAR = "1994"
     INVALID_SEARCH_QUERY = "12345"

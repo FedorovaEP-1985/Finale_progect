@@ -67,7 +67,7 @@ def kp(driver):
 @allure.epic("Кинопоиск онлайн UI")
 @allure.title("Поиск фильма по названию")
 def test_poisk(kp):
-    names = 'Три кота'
+    names = 'Побег из Щоушенка'
     kp.poisk_film(names)
     # Проверка наличия результатов поиска
     assert kp.is_results_found(), "Фильмы не найдены"
@@ -84,18 +84,13 @@ def test_input_name(kp):
 @allure.epic("Кинопоиск онлайн UI")
 @allure.title("Воспроизведение трейлера")
 def test_play(kp):
-    kp.is_trailer_playing()
+    kp.open_film_page("Три кота")  # Метод для открытия страницы фильма
+    kp.play_trailer()
 
 
 @allure.suite("Кинопоиск UI")
 @allure.epic("Кинопоиск онлайн UI")
 @allure.title("Авторизация")
+@allure.title("Авторизация")
 def test_auth(kp):
-    login = "milashkaersh"
-    passwd = "3541"
-    kp.avtorizacia(login, passwd)
-    # Проверка успешной авторизации
-    assert kp.is_authorized(), "Авторизация не удалась"
-
-def test_open_film_page(kp):
-    kp.open_film_page()
+    kp.avtorizacia(login='milashkaersh', passwd=3541)

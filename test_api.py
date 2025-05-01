@@ -1,6 +1,5 @@
 import allure
 import requests
-import pytest
 from config import Config
 from test_data import TestData
 
